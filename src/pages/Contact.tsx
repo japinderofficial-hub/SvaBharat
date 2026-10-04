@@ -14,7 +14,7 @@ export function Contact() {
       </section>
 
       {/* Get in Touch Section */}
-      <section className="relative w-full py-24 px-6 md:px-12 lg:px-24 bg-cream-dark rounded-3xl md:rounded-[3rem] overflow-hidden border-2 border-white">
+      <section className="relative w-full py-14 md:py-20 px-6 md:px-12 lg:px-24 bg-cream-dark rounded-3xl md:rounded-[3rem] overflow-hidden border-2 border-white">
         
         {/* Absolute Background Image aligned to bottom left */}
         <div className="absolute left-0 bottom-0 w-[55%] lg:w-[45%] pointer-events-none opacity-90 mix-blend-multiply z-0">
@@ -23,37 +23,19 @@ export function Contact() {
 
         <CutTitle position="top-left">Get in Touch</CutTitle>
         
-        <div className="mt-16 max-w-6xl mx-auto flex flex-col lg:flex-row gap-16 relative z-10">
-          <div className="lg:w-1/2 flex flex-col justify-start space-y-10 lg:pt-32">
+        <div className="mt-12 max-w-6xl mx-auto flex flex-col lg:flex-row gap-10 relative z-10">
+          <div className="lg:w-1/2 flex flex-col justify-start space-y-6 lg:pt-16">
             <div className="lg:w-[65%]">
-              <h3 className="text-2xl font-serif font-bold mb-4 text-charcoal">We would like to hear from you.</h3>
-              <p className="text-lg text-neutral-600 font-semibold leading-relaxed">
+              <h3 className="text-xl font-serif font-bold mb-3 text-charcoal">We would like to hear from you.</h3>
+              <p className="text-base text-neutral-600 font-semibold leading-relaxed">
                 Have a question you believe Bharat should be asking, or an idea you want to explore or a perspective that could strengthen one of our ideas?
               </p>
             </div>
-                        {/* Image is now absolutely positioned at the section level */}
-            {/* Direct Contact Info (Temporarily Hidden) */}
-            {false && (
-              <div className="space-y-6">
-                <div className="bg-white/60 p-6 rounded-2xl border-2 border-white shadow-sm">
-                  <h4 className="text-xs font-bold text-neutral-455 uppercase tracking-widest mb-2">Email</h4>
-                  <a href="mailto:hello@svabharat.in" className="text-xl font-bold text-charcoal hover:text-primary transition-colors">
-                    hello@svabharat.in
-                  </a>
-                </div>
-                <div className="bg-white/60 p-6 rounded-2xl border-2 border-white shadow-sm">
-                  <h4 className="text-xs font-bold text-neutral-455 uppercase tracking-widest mb-2">Contact Number</h4>
-                  <a href="tel:+919876543210" className="text-xl font-bold text-charcoal hover:text-primary transition-colors">
-                    +91 98765 43210
-                  </a>
-                </div>
-              </div>
-            )}
           </div>
           
-          <div className="lg:w-1/2 bg-white rounded-2xl p-8 md:p-10 shadow-md border-2 border-white animate-fade-in">
-            <h3 className="text-2xl font-serif font-bold mb-8 text-charcoal">Send us a message</h3>
-            <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+          <div className="lg:w-1/2 bg-white rounded-2xl p-6 md:p-8 shadow-md border-2 border-white animate-fade-in">
+            <h3 className="text-xl font-serif font-bold mb-6 text-charcoal">Send us a message</h3>
+            <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
               <div>
                 <label className="block text-xs font-bold text-neutral-500 uppercase tracking-widest mb-2">Name</label>
                 <input type="text" className="w-full px-4 py-3 rounded-xl border-2 border-neutral-200 bg-neutral-50 hover:border-neutral-300 text-sm font-semibold transition-all focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" />
@@ -81,9 +63,9 @@ export function Contact() {
               </div>
               <div>
                 <label className="block text-xs font-bold text-neutral-500 uppercase tracking-widest mb-2">Message</label>
-                <textarea rows={4} className="w-full px-4 py-3 rounded-xl border-2 border-neutral-200 bg-neutral-50 hover:border-neutral-300 text-sm font-semibold resize-none transition-all focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"></textarea>
+                <textarea rows={3} className="w-full px-4 py-3 rounded-xl border-2 border-neutral-200 bg-neutral-50 hover:border-neutral-300 text-sm font-semibold resize-none transition-all focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"></textarea>
               </div>
-              <button className="w-full px-8 py-4 rounded-xl bg-primary text-white font-bold hover:bg-secondary transition-colors shadow-sm cursor-pointer active:scale-95 text-sm uppercase tracking-wider">
+              <button className="w-full px-8 py-3.5 rounded-xl bg-primary text-white font-bold hover:bg-secondary transition-colors shadow-sm cursor-pointer active:scale-95 text-sm uppercase tracking-wider">
                 Start a Conversation
               </button>
             </form>

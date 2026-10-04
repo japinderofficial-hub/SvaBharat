@@ -24,6 +24,15 @@ export function Home() {
     };
   }, []);
 
+  // Auto-rotate testimonials every 5 seconds
+  useEffect(() => {
+    if (testimonials.length <= 1) return;
+    const interval = setInterval(() => {
+      setActiveTestimonial((prev) => (prev + 1) % testimonials.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [testimonials.length]);
+
   return (
     <div className="flex flex-col w-full gap-4 md:gap-8 lg:gap-10">
 
@@ -33,51 +42,62 @@ export function Home() {
         <Hero showAnimation={true} />
       </section>
 
-      <section className="relative w-full py-20 md:py-28 px-6 md:px-16 lg:px-24 bg-cream-dark rounded-3xl md:rounded-[3rem] overflow-hidden border-2 border-white">
-        <CutTitle position="top-left">What Does "SvaBharat" Mean?</CutTitle>
+      <section className="relative w-full py-14 md:py-20 px-6 md:px-16 lg:px-24 bg-cream-dark rounded-3xl md:rounded-[3rem] overflow-hidden border-2 border-white">
+        <CutTitle position="top-left">Why Movement?</CutTitle>
 
-        <div className="mt-16 md:mt-20 w-full lg:w-[60%] lg:ml-auto max-w-4xl relative z-20 pb-4 md:pb-8 transform lg:translate-x-4 xl:translate-x-8">
-          <p className="text-lg md:text-xl text-neutral-600 font-bold mb-12 md:mb-16 leading-relaxed text-center lg:text-left font-serif">
-            SvaBharat (स्वभारत) is formed from two Sanskrit words, each carrying centuries of meaning.
-          </p>
+        <div className="mt-12 md:mt-16 max-w-3xl relative z-20 flex flex-col gap-10">
 
-          {/* Cards with slack rope */}
-          <div className="flex flex-col md:flex-row justify-between items-stretch gap-6 md:gap-0 mb-12 md:mb-16">
-            <div className="w-full md:w-[42%] bg-white rounded-2xl p-8 border-2 border-white text-center shadow-md">
-              <p className="text-xs font-bold text-neutral-400 tracking-widest uppercase mb-4">First word</p>
-              <h3 className="text-3xl md:text-4xl font-serif font-extrabold mb-2 text-charcoal">Sva</h3>
-              <p className="text-xl font-bold text-secondary mb-3">स्व</p>
-              <p className="text-neutral-550 font-semibold leading-relaxed text-sm">Self, Own, One's own — the confidence to think and act from one's own centre.</p>
-            </div>
-
-            {/* Rope */}
-            <div className="hidden md:flex flex-1 items-center justify-center px-2 -translate-y-3">
-              <svg className="w-full h-12" viewBox="0 0 100 40" preserveAspectRatio="none">
-                <path d="M0,8 Q50,38 100,8" fill="none" stroke="#D89A5A" strokeWidth="2.5" strokeLinecap="round" />
-              </svg>
-            </div>
-
-            <div className="w-full md:w-[42%] bg-white rounded-2xl p-8 border-2 border-white text-center shadow-md">
-              <p className="text-xs font-bold text-neutral-400 tracking-widest uppercase mb-4">Second word</p>
-              <h3 className="text-3xl md:text-4xl font-serif font-extrabold mb-2 text-charcoal">Bharat</h3>
-              <p className="text-xl font-bold text-secondary mb-3">भारत</p>
-              <p className="text-neutral-555 font-semibold leading-relaxed text-sm">India — the land, the people, the civilisation, and everything that has yet to be imagined.</p>
-            </div>
-          </div>
-
-          <div className="border-l-4 border-secondary pl-6 py-2 mx-auto lg:mx-0 max-w-2xl bg-white/40 rounded-r-xl">
-            <p className="text-lg md:text-xl font-bold text-charcoal leading-snug text-center lg:text-left font-serif">
-              Together: <span className="font-extrabold text-primary">"Own India"</span> — a self-reliant, self-aware Bharat driven by the aspirations of its own people.
+          {/* Main heading + intro */}
+          <div>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif font-extrabold text-charcoal leading-snug mb-4">
+              Sva-Bharat Movement was born out of a pain.
+            </h2>
+            <p className="text-sm md:text-base text-neutral-600 font-semibold leading-relaxed max-w-2xl">
+              The pain of seeing our systems fail — not always because solutions do not exist, but because we have often chosen to outsource our <span className="italic font-bold text-charcoal">Vichar</span> and <span className="italic font-bold text-charcoal">Niti</span> — our ideas and our policies.
             </p>
           </div>
+
+          {/* Question / Legacy / Possibility — stacked with clear breathing room */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="border-l-4 border-primary pl-5 py-1">
+              <p className="text-xs font-bold text-primary tracking-widest uppercase mb-2">The Question</p>
+              <p className="text-sm md:text-base font-serif font-extrabold text-charcoal leading-snug mb-2">What happens when we stop looking within for our answers?</p>
+              <p className="text-sm text-neutral-600 font-semibold leading-relaxed">When our ideas and policies are borrowed without understanding our own context, our solutions can remain disconnected from the society they are meant to serve.</p>
+            </div>
+            <div className="border-l-4 border-secondary pl-5 py-1">
+              <p className="text-xs font-bold text-secondary tracking-widest uppercase mb-2">The Legacy</p>
+              <p className="text-sm md:text-base font-serif font-extrabold text-charcoal leading-snug mb-2">Bharat has always created Vichar.</p>
+              <p className="text-sm text-neutral-600 font-semibold leading-relaxed">For centuries, this land has been home to thinkers, philosophers, practitioners and communities who developed ideas not merely for Bharat, but for the world.</p>
+            </div>
+            <div className="border-l-4 border-primary pl-5 py-1">
+              <p className="text-xs font-bold text-primary tracking-widest uppercase mb-2">The Possibility</p>
+              <p className="text-sm md:text-base font-serif font-extrabold text-charcoal leading-snug mb-2">The answer can come from within.</p>
+              <p className="text-sm text-neutral-600 font-semibold leading-relaxed mb-2">The strongest solutions can emerge from our own communities, experiences and <span className="italic font-bold text-charcoal">Vichar</span>.</p>
+              <p className="text-sm text-primary font-extrabold font-serif">We create practices worthy of becoming the world's best.</p>
+            </div>
+          </div>
+
+          {/* The Movement */}
+          <div className="bg-white/60 rounded-2xl p-6 border-2 border-white shadow-sm">
+            <p className="text-xs font-bold text-charcoal tracking-widest uppercase mb-3">The Movement</p>
+            <p className="text-lg md:text-xl font-serif font-extrabold text-charcoal leading-snug mb-3">
+              Transformation needs more than an idea.{" "}
+              <span className="text-primary">It needs a movement.</span>
+            </p>
+            <p className="text-sm text-neutral-600 font-semibold leading-relaxed">
+              If Bharat is to transform through ideas rooted in its own context, that <span className="italic font-bold text-charcoal">Vichar</span> must move beyond research and conversation. It must reach communities, institutions and policy.{" "}
+              <span className="font-bold text-neutral-700">That is why Sva-Bharat Movement exists.</span>
+            </p>
+          </div>
+
         </div>
 
-        {/* Absolute Decorative Image on Left */}
-        <div className="absolute top-0 bottom-0 left-0 w-full lg:w-[42%] xl:w-[45%] h-full pointer-events-none select-none flex items-end">
-          <img 
-            src="/img2.png?v=2" 
-            alt="SvaBharat Meaning" 
-            className="w-full h-full mix-blend-multiply opacity-90 object-contain object-bottom lg:object-right-bottom transform translate-y-6 md:translate-y-10 lg:translate-y-12 -translate-x-2 lg:-translate-x-4 xl:-translate-x-8"
+        {/* Decorative Image */}
+        <div className="absolute top-0 bottom-0 right-0 w-full lg:w-[42%] xl:w-[45%] h-full pointer-events-none select-none flex items-end justify-end">
+          <img
+            src="/img2.png?v=2"
+            alt=""
+            className="w-full h-full mix-blend-multiply opacity-90 object-contain object-bottom lg:object-left-bottom transform translate-y-6 md:translate-y-10 lg:translate-y-12 translate-x-2 lg:translate-x-4 xl:translate-x-8"
           />
         </div>
       </section>
@@ -153,21 +173,40 @@ export function Home() {
       )}
 
 
-      {/* ── JOIN THE MOVEMENT ── */}
-      <section className="relative w-full py-20 md:py-28 px-6 md:px-16 lg:px-24 bg-cream rounded-3xl md:rounded-[3rem] overflow-hidden border-2 border-white">
-        <CutTitle position="top-left">Join the Movement</CutTitle>
+      {/* ── IDEAS THAT MAKE A DIFFERENCE ── */}
+      <section className="relative w-full py-20 md:py-28 px-6 md:px-16 lg:px-24 bg-cream-dark rounded-3xl md:rounded-[3rem] overflow-hidden border-2 border-white">
+        <CutTitle position="top-left">Ideas That Make a Difference</CutTitle>
 
-        <div className="mt-16 md:mt-20 max-w-2xl lg:max-w-xl xl:max-w-2xl relative z-20">
-          <p className="text-2xl md:text-4xl font-serif font-extrabold leading-relaxed text-charcoal mb-12">
-            Bharat cannot be reimagined by a few. There is space here for every person carrying a question that refuses to leave them.
+        <div className="mt-16 md:mt-20 max-w-3xl relative z-20">
+          <p className="text-2xl md:text-3xl font-serif font-extrabold leading-snug text-charcoal mb-4">
+            Every transformation begins with an idea that refuses to stay quiet.
+          </p>
+          <p className="text-neutral-600 font-semibold text-base md:text-lg leading-relaxed mb-12">
+            SvaBharat brings together ideas rooted in Bharat's own context — from people across communities, disciplines, and generations.
           </p>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-8 gap-y-3 text-neutral-600 font-bold mb-12 text-sm md:text-base">
-            {["A student", "A researcher", "A teacher", "An entrepreneur", "A public servant", "A technologist", "A community practitioner", "An artist", "A thinker"].map(p => (
-              <p key={p} className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-secondary"></span>
-                {p}.
-              </p>
+          {/* Ideas Follow Path */}
+          <div className="flex flex-col gap-0 mb-12">
+            {[
+              { step: "01", label: "An Idea Is Born", desc: "Someone asks a question that existing frameworks cannot answer. They write it down." },
+              { step: "02", label: "It Finds Its Context", desc: "The idea is grounded in lived experience, research, or practice — rooted in Bharat's reality." },
+              { step: "03", label: "It Enters Conversation", desc: "Others engage with it — challenging, building, and refining it through dialogue." },
+              { step: "04", label: "It Reaches Communities", desc: "The refined idea moves beyond conversation into institutions, policy, and people." },
+            ].map((item, i, arr) => (
+              <div key={item.step} className="flex gap-4 md:gap-6 items-start">
+                {/* Timeline spine */}
+                <div className="flex flex-col items-center shrink-0">
+                  <div className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center text-xs font-extrabold shrink-0">
+                    {item.step}
+                  </div>
+                  {i < arr.length - 1 && <div className="w-0.5 h-10 bg-primary/20 mt-1" />}
+                </div>
+                {/* Content */}
+                <div className="pb-8">
+                  <h3 className="text-base md:text-lg font-serif font-extrabold text-charcoal mb-1">{item.label}</h3>
+                  <p className="text-sm text-neutral-600 font-semibold leading-relaxed">{item.desc}</p>
+                </div>
+              </div>
             ))}
           </div>
 
@@ -175,17 +214,17 @@ export function Home() {
             to="/ideas"
             className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-primary text-white text-sm font-bold hover:bg-secondary transition-colors cursor-pointer active:scale-95 shadow-sm"
           >
-            Contribute an Idea
+            Explore the Ideas
             <span className="ml-1">→</span>
           </Link>
         </div>
 
-        {/* Absolute Decorative Image */}
-        <div className="absolute -bottom-4 md:-bottom-8 lg:-bottom-12 -right-4 md:-right-8 lg:-right-12 w-[85%] sm:w-[75%] md:w-[60%] lg:w-[55%] xl:w-[55%] pointer-events-none select-none">
-          <img 
-            src="/img4.png?v=2" 
-            alt="Join the Movement Illustration" 
-            className="w-full h-auto object-contain object-bottom mix-blend-multiply opacity-90 hover:opacity-100 transition-opacity duration-500 transform translate-y-0 md:translate-y-2 lg:translate-y-4"
+        {/* Decorative image */}
+        <div className="absolute -bottom-4 md:-bottom-8 lg:-bottom-12 -right-4 md:-right-8 lg:-right-12 w-[85%] sm:w-[75%] md:w-[60%] lg:w-[55%] xl:w-[50%] pointer-events-none select-none">
+          <img
+            src="/img4.png?v=2"
+            alt=""
+            className="w-full h-auto object-contain object-bottom mix-blend-multiply opacity-90 transform translate-y-0 md:translate-y-2 lg:translate-y-4"
           />
         </div>
       </section>

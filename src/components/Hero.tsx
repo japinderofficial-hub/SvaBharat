@@ -37,7 +37,7 @@ export function Hero({ showAnimation }: { showAnimation: boolean }) {
       {/* Full-bleed background photo */}
       <div className="absolute inset-0 z-0 pointer-events-none select-none">
         <img
-          src="/svabharat.png"
+          src="/svabharat_newww.png"
           alt=""
           className="w-full h-full object-cover object-center"
         />
@@ -72,17 +72,18 @@ export function Hero({ showAnimation }: { showAnimation: boolean }) {
       <div className="relative z-10 flex-1 flex items-center justify-center px-6 md:px-16 lg:px-24">
         <h1
           ref={titleRef}
-          className="text-center max-w-4xl select-none flex flex-col gap-2 font-sans font-light italic tracking-[-0.015em] text-[clamp(1.8rem,4.5vw,3.8rem)] leading-[1.2]"
+          className="text-center max-w-4xl select-none flex flex-col gap-1 font-serif font-bold tracking-tight text-[clamp(2rem,5vw,4.2rem)] leading-[1.15]"
           style={{ opacity: 0 }}
         >
-          {/* "Sva-Bharat" in primary orange */}
+          {/* "Sva-Bharat" — deep saffron, stands out on warm bg */}
           <span className="block">
-            <span className="cursor-target-expand inline-block text-primary drop-shadow-sm">Sva-Bharat</span>
+            <span className="cursor-target-expand inline-block text-[#B45309] drop-shadow-sm">Sva-Bharat</span>
           </span>
-          <span className="block text-white drop-shadow-md">
+          {/* Remaining lines — deep charcoal, crisp on the warm background */}
+          <span className="block text-[#1C1917] drop-shadow-sm">
             <span className="cursor-target-expand inline-block">Reimagining Bharat</span>
           </span>
-          <span className="block text-white drop-shadow-md">
+          <span className="block text-[#1C1917] drop-shadow-sm">
             <span className="cursor-target-expand inline-block">From First Principles.</span>
           </span>
         </h1>
@@ -93,24 +94,23 @@ export function Hero({ showAnimation }: { showAnimation: boolean }) {
         ref={bottomRef}
         className="relative z-10 flex flex-col sm:flex-row items-center sm:items-end justify-between gap-6 px-6 md:px-16 lg:px-24 pb-8 md:pb-12 text-center sm:text-left"
       >
-        <p className="max-w-sm text-sm md:text-base text-white font-semibold leading-relaxed drop-shadow-sm" style={{ opacity: 0 }}>
+        <p className="max-w-sm text-sm md:text-base text-[#FAF5EB] font-semibold leading-relaxed" style={{ opacity: 0 }}>
           A Movement to Inspire Jan to Shape the Bharat They Aspire For.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 w-full sm:w-auto" style={{ opacity: 0 }}>
           <a
             href="/ideas"
-            className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-primary text-white text-sm font-bold hover:bg-secondary transition-colors w-full sm:w-auto shadow-sm cursor-pointer active:scale-95"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#B45309] text-white text-sm font-bold hover:bg-[#92400E] transition-colors w-full sm:w-auto shadow-md cursor-pointer active:scale-95"
           >
             Explore the Ideas
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
-          {/* TODO: Replace href with the actual form link once provided */}
           <a
-            href="https://forms.gle/REPLACE_WITH_FORM_LINK"
+            href="https://tally.so/r/jaRrya"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl border-2 border-white/80 bg-white/20 backdrop-blur-sm text-white text-sm font-bold hover:bg-white/30 transition-colors w-full sm:w-auto shadow-sm cursor-pointer active:scale-95"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl border-2 border-[#1C1917]/40 bg-white/30 backdrop-blur-sm text-[#1C1917] text-sm font-bold hover:bg-white/50 transition-colors w-full sm:w-auto shadow-md cursor-pointer active:scale-95"
           >
             Join the Movement
           </a>

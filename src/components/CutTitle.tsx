@@ -18,7 +18,7 @@ export function CutTitle({ children, className = "", position = "top-left" }: Cu
         {/* Left Concave Curve (Top Edge) */}
         <svg className="absolute top-0 -left-3 sm:-left-4 md:-left-6 w-3 h-3 sm:w-4 sm:h-4 md:w-6 md:h-6 fill-white pointer-events-none drop-shadow-sm" viewBox="0 0 32 32">
           {/* Flipped horizontally from top-left */}
-          <path d="M32,0 H0 A32,32 0 0,1 32,32 Z" />
+          <path d="M32,0 H0 A32,32 0 b0,1 32,32 Z" />
         </svg>
 
         {/* Bottom Concave Curve (Right Edge) */}

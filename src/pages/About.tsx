@@ -149,6 +149,41 @@ export function About() {
         </motion.div>
       </section>
 
+      {/* ── BRINGING EVERYONE TOGETHER ── */}
+      <section className="relative w-full overflow-hidden rounded-3xl bg-cream px-6 py-24 md:rounded-[3rem] md:px-12 lg:px-24 border-2 border-white">
+        <CutTitle position="top-left">Bringing Everyone Together</CutTitle>
+        <motion.div {...fadeUp} className="mx-auto mt-16 max-w-5xl">
+          <p className="mb-12 max-w-3xl text-2xl md:text-3xl font-serif font-extrabold leading-snug text-charcoal">
+            Bharat cannot be reimagined by a few. There is space here for every person carrying a question that refuses to leave them.
+          </p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
+            {[
+              { who: "Students & Teachers", desc: "Questioning textbooks and building new frameworks for learning." },
+              { who: "Researchers & Writers", desc: "Producing rigorous, grounded knowledge from within Bharat's own experience." },
+              { who: "Entrepreneurs & Technologists", desc: "Building solutions that emerge from context, not just borrowed templates." },
+              { who: "Public Servants & Practitioners", desc: "Translating ideas into policy, institutions, and real change on the ground." },
+              { who: "Artists & Storytellers", desc: "Shaping imagination, culture, and the stories a society tells about itself." },
+              { who: "Communities & Builders", desc: "Bringing lived wisdom, deep roots, and the credibility of practice." },
+            ].map((item) => (
+              <div key={item.who} className="rounded-2xl bg-white p-6 border-2 border-white shadow-sm flex flex-col gap-2">
+                <p className="flex items-center gap-2 text-sm font-extrabold text-charcoal font-serif">
+                  <span className="w-2 h-2 rounded-full bg-secondary shrink-0" />
+                  {item.who}
+                </p>
+                <p className="text-xs text-neutral-600 font-semibold leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="border-l-4 border-primary pl-6 py-2 bg-white/40 rounded-r-xl max-w-2xl">
+            <p className="text-lg md:text-xl font-serif font-bold text-charcoal leading-snug">
+              SvaBharat is not a platform for experts alone. It is a movement for everyone who believes that ideas rooted in Bharat's own soil can change the world.
+            </p>
+          </div>
+        </motion.div>
+      </section>
+
       <section className="relative w-full overflow-hidden rounded-3xl bg-charcoal-deep px-6 py-24 text-white md:rounded-[3rem] md:px-12 lg:px-24 border-2 border-white/10">
         <CutTitle position="top-left" className="!bg-charcoal-deep !text-white [&_svg]:!fill-charcoal-deep">
           The Movement
