@@ -71,7 +71,7 @@ export function Navbar() {
                 className={`transition-all duration-300 pb-1 uppercase text-xs ${
                   isActive 
                     ? "text-primary border-b-2 border-primary font-black" 
-                    : "text-neutral-550 hover:text-primary hover:-translate-y-0.5"
+                    : "text-neutral-600 hover:text-primary"
                 }`}
               >
                 {l.label}
@@ -121,7 +121,7 @@ export function Navbar() {
                     className={`transition-all duration-300 uppercase text-xs ${
                       isActive 
                         ? "text-primary font-black" 
-                        : "text-neutral-600 hover:text-primary hover:-translate-y-0.5"
+                        : "text-neutral-600 hover:text-primary"
                     }`}
                   >
                     {l.label}

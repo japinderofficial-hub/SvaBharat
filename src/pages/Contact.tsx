@@ -5,10 +5,10 @@ export function Contact() {
   return (
     <div className="flex flex-col w-full gap-4 md:gap-8 lg:gap-10">
       {/* Page Header */}
-      <section className="relative w-full pt-32 pb-16 px-6 md:px-12 lg:px-24 bg-cream rounded-3xl md:rounded-[3rem] overflow-hidden border-2 border-white">
+      <section className="relative w-full pt-36 md:pt-44 pb-16 px-6 md:px-12 lg:px-24 bg-cream rounded-3xl md:rounded-[3rem] overflow-hidden border-2 border-white">
         <Navbar />
-        <h1 className="text-5xl md:text-7xl font-serif font-extrabold tracking-tight mb-6 text-charcoal">Contact Us</h1>
-        <p className="text-xl md:text-2xl text-neutral-600 max-w-3xl font-serif font-bold">
+        <h1 className="text-5xl md:text-7xl font-serif font-bold tracking-tight leading-[1.05] mb-6 text-charcoal">Contact us</h1>
+        <p className="text-lg md:text-xl text-neutral-700 max-w-2xl leading-relaxed">
           Every meaningful movement begins with a conversation.
         </p>
       </section>
@@ -27,7 +27,7 @@ export function Contact() {
           <div className="lg:w-1/2 flex flex-col justify-start space-y-6 lg:pt-16">
             <div className="lg:w-[65%]">
               <h3 className="text-xl font-serif font-bold mb-3 text-charcoal">We would like to hear from you.</h3>
-              <p className="text-base text-neutral-600 font-semibold leading-relaxed">
+              <p className="text-base text-neutral-700 leading-relaxed">
                 Have a question you believe Bharat should be asking, or an idea you want to explore or a perspective that could strengthen one of our ideas?
               </p>
             </div>
@@ -37,19 +37,19 @@ export function Contact() {
             <h3 className="text-xl font-serif font-bold mb-6 text-charcoal">Send us a message</h3>
             <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
               <div>
-                <label className="block text-xs font-bold text-neutral-500 uppercase tracking-widest mb-2">Name</label>
+                <label className="block text-sm font-semibold text-charcoal mb-1.5">Name</label>
                 <input type="text" className="w-full px-4 py-3 rounded-xl border-2 border-neutral-200 bg-neutral-50 hover:border-neutral-300 text-sm font-semibold transition-all focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" />
               </div>
               <div>
-                <label className="block text-xs font-bold text-neutral-500 uppercase tracking-widest mb-2">Email Address</label>
+                <label className="block text-sm font-semibold text-charcoal mb-1.5">Email Address</label>
                 <input type="email" className="w-full px-4 py-3 rounded-xl border-2 border-neutral-200 bg-neutral-50 hover:border-neutral-300 text-sm font-semibold transition-all focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" />
               </div>
               <div>
-                <label className="block text-xs font-bold text-neutral-500 uppercase tracking-widest mb-2">Organisation / Affiliation (Optional)</label>
+                <label className="block text-sm font-semibold text-charcoal mb-1.5">Organisation / Affiliation (Optional)</label>
                 <input type="text" className="w-full px-4 py-3 rounded-xl border-2 border-neutral-200 bg-neutral-50 hover:border-neutral-300 text-sm font-semibold transition-all focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" />
               </div>
               <div>
-                <label className="block text-xs font-bold text-neutral-500 uppercase tracking-widest mb-2">I am reaching out about:</label>
+                <label className="block text-sm font-semibold text-charcoal mb-1.5">I am reaching out about</label>
                 <select className="w-full px-4 py-3 rounded-xl border-2 border-neutral-200 bg-neutral-50 hover:border-neutral-300 text-sm font-semibold transition-all focus:outline-none focus:ring-2 focus:ring-primary">
                   <option>Contributing an Idea</option>
                   <option>Joining an Existing Idea</option>
@@ -62,10 +62,10 @@ export function Contact() {
                 </select>
               </div>
               <div>
-                <label className="block text-xs font-bold text-neutral-500 uppercase tracking-widest mb-2">Message</label>
+                <label className="block text-sm font-semibold text-charcoal mb-1.5">Message</label>
                 <textarea rows={3} className="w-full px-4 py-3 rounded-xl border-2 border-neutral-200 bg-neutral-50 hover:border-neutral-300 text-sm font-semibold resize-none transition-all focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"></textarea>
               </div>
-              <button className="w-full px-8 py-3.5 rounded-xl bg-primary text-white font-bold hover:bg-secondary transition-colors shadow-sm cursor-pointer active:scale-95 text-sm uppercase tracking-wider">
+              <button className="w-full px-8 py-3.5 rounded-full bg-charcoal text-cream-light font-semibold hover:bg-primary transition-colors cursor-pointer text-sm">
                 Start a Conversation
               </button>
             </form>
@@ -89,11 +89,11 @@ export function Contact() {
                   {i === 1 ? "SB" : i === 2 ? "RC" : "VK"}
                 </div>
                 <h4 className="text-xl font-serif font-bold mb-1 text-charcoal">Team Member</h4>
-                <p className="text-primary font-bold text-xs uppercase tracking-wider mb-4">Position</p>
-                <p className="text-neutral-600 mb-8 flex-grow font-semibold text-sm leading-relaxed">
+                <p className="font-serif italic text-secondary mb-4">Position</p>
+                <p className="text-neutral-700 mb-8 flex-grow text-[0.95rem] leading-relaxed">
                   Biography highlighting the person’s role, background, and areas of work. They ensure ideas find expression and movement happens on ground.
                 </p>
-                <a href="#" className="inline-flex items-center gap-2 text-xs font-bold text-secondary hover:text-primary transition-colors uppercase tracking-wider">
+                <a href="#" className="inline-flex items-center gap-2 text-sm font-semibold text-charcoal hover:text-primary transition-colors">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                   Connect on LinkedIn
                 </a>

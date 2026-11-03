@@ -4,7 +4,7 @@ import { Hero } from "../components/Hero";
 import { CutTitle } from "../components/CutTitle";
 import { Navbar } from "../components/Navbar";
 import { getTestimonials, type Testimonial } from "../utils/storage";
-import { Quote, ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 
@@ -49,44 +49,54 @@ export function Home() {
 
           {/* Main heading + intro */}
           <div>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif font-extrabold text-charcoal leading-snug mb-4">
+            <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-serif font-bold text-charcoal leading-[1.15] mb-5">
               Sva-Bharat Movement was born out of a pain.
             </h2>
-            <p className="text-sm md:text-base text-neutral-600 font-semibold leading-relaxed max-w-2xl">
-              The pain of seeing our systems fail — not always because solutions do not exist, but because we have often chosen to outsource our <span className="italic font-bold text-charcoal">Vichar</span> and <span className="italic font-bold text-charcoal">Niti</span> — our ideas and our policies.
+            <p className="text-base md:text-lg text-neutral-700 leading-relaxed max-w-2xl">
+              The pain of seeing our systems fail. Not always because solutions do not exist, but because we have often chosen to outsource our <em className="font-serif text-charcoal">Vichar</em> and <em className="font-serif text-charcoal">Niti</em>, our ideas and our policies.
             </p>
           </div>
 
-          {/* Question / Legacy / Possibility — stacked with clear breathing room */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="border-l-4 border-primary pl-5 py-1">
-              <p className="text-xs font-bold text-primary tracking-widest uppercase mb-2">The Question</p>
-              <p className="text-sm md:text-base font-serif font-extrabold text-charcoal leading-snug mb-2">What happens when we stop looking within for our answers?</p>
-              <p className="text-sm text-neutral-600 font-semibold leading-relaxed">When our ideas and policies are borrowed without understanding our own context, our solutions can remain disconnected from the society they are meant to serve.</p>
-            </div>
-            <div className="border-l-4 border-secondary pl-5 py-1">
-              <p className="text-xs font-bold text-secondary tracking-widest uppercase mb-2">The Legacy</p>
-              <p className="text-sm md:text-base font-serif font-extrabold text-charcoal leading-snug mb-2">Bharat has always created Vichar.</p>
-              <p className="text-sm text-neutral-600 font-semibold leading-relaxed">For centuries, this land has been home to thinkers, philosophers, practitioners and communities who developed ideas not merely for Bharat, but for the world.</p>
-            </div>
-            <div className="border-l-4 border-primary pl-5 py-1">
-              <p className="text-xs font-bold text-primary tracking-widest uppercase mb-2">The Possibility</p>
-              <p className="text-sm md:text-base font-serif font-extrabold text-charcoal leading-snug mb-2">The answer can come from within.</p>
-              <p className="text-sm text-neutral-600 font-semibold leading-relaxed mb-2">The strongest solutions can emerge from our own communities, experiences and <span className="italic font-bold text-charcoal">Vichar</span>.</p>
-              <p className="text-sm text-primary font-extrabold font-serif">We create practices worthy of becoming the world's best.</p>
-            </div>
-          </div>
+          {/* Question / Legacy / Possibility */}
+          <ol className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-8 border-t border-charcoal/15">
+            {[
+              {
+                n: "i.",
+                label: "The question",
+                head: "What happens when we stop looking within for our answers?",
+                body: "When our ideas and policies are borrowed without understanding our own context, our solutions can remain disconnected from the society they are meant to serve.",
+              },
+              {
+                n: "ii.",
+                label: "The legacy",
+                head: "Bharat has always created Vichar.",
+                body: "For centuries, this land has been home to thinkers, philosophers, practitioners and communities who developed ideas not merely for Bharat, but for the world.",
+              },
+              {
+                n: "iii.",
+                label: "The possibility",
+                head: "The answer can come from within.",
+                body: "The strongest solutions can emerge from our own communities, experiences and Vichar, practices worthy of becoming the world's best.",
+              },
+            ].map((item) => (
+              <li key={item.label} className="pt-5">
+                <p className="font-serif italic text-secondary text-base mb-3">
+                  {item.n} <span className="text-charcoal/60">{item.label}</span>
+                </p>
+                <p className="text-lg font-serif font-bold text-charcoal leading-snug mb-2">{item.head}</p>
+                <p className="text-sm md:text-[0.95rem] text-neutral-700 leading-relaxed">{item.body}</p>
+              </li>
+            ))}
+          </ol>
 
           {/* The Movement */}
-          <div className="bg-white/60 rounded-2xl p-6 border-2 border-white shadow-sm">
-            <p className="text-xs font-bold text-charcoal tracking-widest uppercase mb-3">The Movement</p>
-            <p className="text-lg md:text-xl font-serif font-extrabold text-charcoal leading-snug mb-3">
+          <div className="pt-2">
+            <p className="text-2xl md:text-3xl font-serif font-bold text-charcoal leading-snug mb-4 max-w-2xl">
               Transformation needs more than an idea.{" "}
-              <span className="text-primary">It needs a movement.</span>
+              <span className="italic font-medium text-secondary">It needs a movement.</span>
             </p>
-            <p className="text-sm text-neutral-600 font-semibold leading-relaxed">
-              If Bharat is to transform through ideas rooted in its own context, that <span className="italic font-bold text-charcoal">Vichar</span> must move beyond research and conversation. It must reach communities, institutions and policy.{" "}
-              <span className="font-bold text-neutral-700">That is why Sva-Bharat Movement exists.</span>
+            <p className="text-base text-neutral-700 leading-relaxed max-w-2xl">
+              If Bharat is to transform through ideas rooted in its own context, that <em className="font-serif text-charcoal">Vichar</em> must move beyond research and conversation. It must reach communities, institutions and policy. That is why Sva-Bharat Movement exists.
             </p>
           </div>
 
@@ -97,7 +107,7 @@ export function Home() {
           <img
             src="/img2.png?v=2"
             alt=""
-            className="w-full h-full mix-blend-multiply opacity-90 object-contain object-bottom lg:object-left-bottom transform translate-y-6 md:translate-y-10 lg:translate-y-12 translate-x-2 lg:translate-x-4 xl:translate-x-8"
+            className="w-full h-full mix-blend-multiply opacity-25 lg:opacity-90 object-contain object-bottom lg:object-left-bottom transform translate-y-6 md:translate-y-10 lg:translate-y-12 translate-x-2 lg:translate-x-4 xl:translate-x-8"
           />
         </div>
       </section>
@@ -106,21 +116,20 @@ export function Home() {
       <section className="relative w-full py-20 md:py-28 px-6 md:px-16 lg:px-24 bg-cream rounded-3xl md:rounded-[3rem] overflow-hidden border-2 border-white">
         <CutTitle position="top-left">From First Principles to New Possibilities</CutTitle>
 
-        <div className="mt-16 md:mt-20 max-w-3xl lg:max-w-xl xl:max-w-2xl relative z-20">
-          <p className="text-2xl md:text-3xl font-serif font-extrabold leading-relaxed text-charcoal mb-10">
+        <div className="mt-16 md:mt-20 max-w-3xl lg:max-w-lg xl:max-w-xl relative z-20">
+          <p className="text-3xl md:text-4xl font-serif font-bold leading-[1.2] text-charcoal mb-10">
             We begin not with solutions, but with the right questions.
           </p>
-          <div className="space-y-6 text-neutral-600 font-semibold text-lg leading-relaxed mb-12">
-            <p>Not <span className="italic font-serif text-neutral-500">"How can the existing system be improved?"</span></p>
-            <p className="text-primary font-bold text-xl md:text-2xl font-serif">"What are we actually trying to achieve?"</p>
+          <div className="space-y-5 text-neutral-700 text-lg leading-relaxed mb-12">
+            <p className="font-serif text-xl text-neutral-500"><span className="line-through decoration-neutral-400/70">“How can the existing system be improved?”</span></p>
+            <p className="font-serif italic text-2xl md:text-3xl text-charcoal">“What are we actually trying to achieve?”</p>
             <p>We strip problems back to what is fundamentally true, and rebuild from there.</p>
           </div>
           <Link
             to="/about"
-            className="inline-flex items-center gap-2 text-sm font-bold text-primary hover:text-secondary transition-colors group uppercase tracking-wider"
+            className="inline-flex items-center text-base font-semibold text-charcoal underline decoration-charcoal/30 underline-offset-[6px] hover:decoration-charcoal transition-colors"
           >
             Explore how we think
-            <span className="group-hover:translate-x-1.5 transition-transform duration-200">→</span>
           </Link>
         </div>
 
@@ -129,7 +138,7 @@ export function Home() {
           <img 
             src="/middle2.png?v=3" 
             alt="First Principles Illustration" 
-            className="w-full h-auto object-contain object-bottom mix-blend-multiply opacity-90 hover:opacity-100 transition-opacity duration-500 transform translate-y-6 md:translate-y-10"
+            className="w-full h-auto object-contain object-bottom mix-blend-multiply opacity-25 lg:opacity-90 hover:opacity-100 transition-opacity duration-500 transform translate-y-6 md:translate-y-10"
           />
         </div>
       </section>
@@ -178,44 +187,36 @@ export function Home() {
         <CutTitle position="top-left">Ideas That Make a Difference</CutTitle>
 
         <div className="mt-16 md:mt-20 max-w-3xl relative z-20">
-          <p className="text-2xl md:text-3xl font-serif font-extrabold leading-snug text-charcoal mb-4">
+          <p className="text-3xl md:text-4xl font-serif font-bold leading-[1.2] text-charcoal mb-5">
             Every transformation begins with an idea that refuses to stay quiet.
           </p>
-          <p className="text-neutral-600 font-semibold text-base md:text-lg leading-relaxed mb-12">
-            SvaBharat brings together ideas rooted in Bharat's own context — from people across communities, disciplines, and generations.
+          <p className="text-neutral-700 text-base md:text-lg leading-relaxed mb-10 max-w-xl">
+            SvaBharat brings together ideas rooted in Bharat's own context, from people across communities, disciplines, and generations.
           </p>
 
           {/* Ideas Follow Path */}
-          <div className="flex flex-col gap-0 mb-12">
+          <ol className="mb-12 max-w-xl">
             {[
-              { step: "01", label: "An Idea Is Born", desc: "Someone asks a question that existing frameworks cannot answer. They write it down." },
-              { step: "02", label: "It Finds Its Context", desc: "The idea is grounded in lived experience, research, or practice — rooted in Bharat's reality." },
-              { step: "03", label: "It Enters Conversation", desc: "Others engage with it — challenging, building, and refining it through dialogue." },
-              { step: "04", label: "It Reaches Communities", desc: "The refined idea moves beyond conversation into institutions, policy, and people." },
-            ].map((item, i, arr) => (
-              <div key={item.step} className="flex gap-4 md:gap-6 items-start">
-                {/* Timeline spine */}
-                <div className="flex flex-col items-center shrink-0">
-                  <div className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center text-xs font-extrabold shrink-0">
-                    {item.step}
-                  </div>
-                  {i < arr.length - 1 && <div className="w-0.5 h-10 bg-primary/20 mt-1" />}
+              { label: "An idea is born", desc: "Someone asks a question that existing frameworks cannot answer, and writes it down." },
+              { label: "It finds its context", desc: "The idea is grounded in lived experience, research, or practice, rooted in Bharat's reality." },
+              { label: "It enters conversation", desc: "Others engage with it, challenging, building on and refining it through dialogue." },
+              { label: "It reaches communities", desc: "The refined idea moves beyond conversation into institutions, policy, and people." },
+            ].map((item, i) => (
+              <li key={item.label} className="grid grid-cols-[2.5rem_1fr] gap-x-4 py-5 border-t border-charcoal/15 last:border-b">
+                <span className="font-serif italic text-2xl leading-none text-secondary pt-0.5">{i + 1}</span>
+                <div>
+                  <h3 className="text-lg font-serif font-bold text-charcoal mb-1">{item.label}</h3>
+                  <p className="text-sm md:text-[0.95rem] text-neutral-700 leading-relaxed">{item.desc}</p>
                 </div>
-                {/* Content */}
-                <div className="pb-8">
-                  <h3 className="text-base md:text-lg font-serif font-extrabold text-charcoal mb-1">{item.label}</h3>
-                  <p className="text-sm text-neutral-600 font-semibold leading-relaxed">{item.desc}</p>
-                </div>
-              </div>
+              </li>
             ))}
-          </div>
+          </ol>
 
           <Link
             to="/ideas"
-            className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-primary text-white text-sm font-bold hover:bg-secondary transition-colors cursor-pointer active:scale-95 shadow-sm"
+            className="inline-flex items-center px-6 py-3 rounded-full bg-charcoal text-cream-light text-sm font-semibold hover:bg-primary transition-colors"
           >
-            Explore the Ideas
-            <span className="ml-1">→</span>
+            Explore the ideas
           </Link>
         </div>
 
@@ -224,7 +225,7 @@ export function Home() {
           <img
             src="/img4.png?v=2"
             alt=""
-            className="w-full h-auto object-contain object-bottom mix-blend-multiply opacity-90 transform translate-y-0 md:translate-y-2 lg:translate-y-4"
+            className="w-full h-auto object-contain object-bottom mix-blend-multiply opacity-25 lg:opacity-90 transform translate-y-0 md:translate-y-2 lg:translate-y-4"
           />
         </div>
       </section>
@@ -238,7 +239,7 @@ export function Home() {
             <img 
               src="/img6.png?v=4" 
               alt="Voices Left Illustration" 
-              className="w-full h-full mix-blend-multiply opacity-90 object-contain object-bottom lg:object-left-bottom transform translate-y-10 md:translate-y-14 lg:translate-y-20 -translate-x-10 lg:-translate-x-16 xl:-translate-x-24"
+              className="w-full h-full mix-blend-multiply opacity-25 lg:opacity-90 object-contain object-bottom lg:object-left-bottom transform translate-y-10 md:translate-y-14 lg:translate-y-20 -translate-x-10 lg:-translate-x-16 xl:-translate-x-24"
             />
           </div>
 
@@ -248,56 +249,42 @@ export function Home() {
              {/* Container aligned to right side */}
              <div className="w-full md:w-[28rem] lg:w-[30rem] shrink-0">
                
-               <p className="text-lg md:text-xl text-neutral-700 font-bold mb-8 font-serif text-center lg:text-left">
+               <p className="text-lg md:text-xl text-charcoal/80 mb-8 font-serif italic text-center lg:text-left">
                  What researchers, practitioners, and builders say about the SvaBharat movement.
                </p>
 
                {/* Single Card Carousel */}
                <div className="relative w-full h-[380px] sm:h-[350px] md:h-[340px] lg:h-[320px]">
                  <AnimatePresence>
-                   <motion.div 
+                   <motion.figure
                      key={activeTestimonial}
-                     initial={{ opacity: 0, x: 50, rotateY: -10 }}
-                     animate={{ opacity: 1, x: 0, rotateY: 0 }}
-                     exit={{ opacity: 0, x: -50, rotateY: 10 }}
-                     transition={{ duration: 0.4, ease: "easeOut" }}
-                     className="bg-white rounded-3xl p-6 md:p-8 border-2 border-white shadow-xl flex flex-col justify-between w-full h-full absolute inset-0"
+                     initial={{ opacity: 0, y: 8 }}
+                     animate={{ opacity: 1, y: 0 }}
+                     exit={{ opacity: 0, y: -8 }}
+                     transition={{ duration: 0.35, ease: "easeOut" }}
+                     className="bg-cream-light rounded-2xl p-7 md:p-9 shadow-[0_1px_0_rgba(0,0,0,0.04),0_12px_32px_-12px_rgba(120,60,10,0.25)] flex flex-col justify-between w-full h-full absolute inset-0"
                    >
-                     
-                     <div className="flex flex-col">
-                       {/* Orange Opening Quote Icon (Rotated) */}
-                       <div className="w-10 h-10 bg-secondary-light text-secondary rounded-xl flex items-center justify-center mb-4 shrink-0 transform rotate-180">
-                         <Quote className="w-5 h-5 fill-current" />
-                       </div>
-                       
-                       <p className="text-charcoal/90 text-sm md:text-base font-semibold leading-relaxed mb-4 italic font-serif">
+                     <div>
+                       <span aria-hidden="true" className="block font-serif text-6xl leading-[0.6] text-secondary/70 mb-3">“</span>
+                       <blockquote className="text-charcoal text-base md:text-lg leading-relaxed font-serif italic">
                          {testimonials[activeTestimonial]?.quote}
-                       </p>
-
-                       {/* Orange Closing Quote Icon (Normal) */}
-                       <div className="w-10 h-10 bg-secondary-light text-secondary rounded-xl flex items-center justify-center shrink-0 self-end">
-                         <Quote className="w-5 h-5 fill-current" />
-                       </div>
+                       </blockquote>
                      </div>
 
-                     <div className="border-t border-neutral-100 pt-4 mt-4 relative z-10 flex items-center gap-4">
-                       <div className="w-10 h-10 rounded-full bg-secondary-light/30 flex items-center justify-center text-secondary font-serif font-bold text-lg shrink-0">
-                         {testimonials[activeTestimonial]?.name.charAt(0)}
-                       </div>
-                       <div>
-                         <h4 className="font-bold text-neutral-900 font-serif text-base leading-tight">{testimonials[activeTestimonial]?.name}</h4>
-                         <p className="text-xs font-bold text-primary">{testimonials[activeTestimonial]?.role}</p>
-                       </div>
-                     </div>
-                   </motion.div>
+                     <figcaption className="pt-5 mt-5 border-t border-charcoal/10">
+                       <p className="font-serif font-bold text-charcoal text-base leading-tight">{testimonials[activeTestimonial]?.name}</p>
+                       <p className="text-sm text-neutral-600 mt-0.5">{testimonials[activeTestimonial]?.role}</p>
+                     </figcaption>
+                   </motion.figure>
                  </AnimatePresence>
                </div>
 
                {/* Navigation Controls */}
                <div className="flex items-center justify-center gap-6 mt-10">
-                  <button 
+                  <button
                     onClick={() => setActiveTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length)}
-                    className="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-neutral-500 hover:text-primary hover:scale-110 transition-all border border-neutral-100 cursor-pointer"
+                    aria-label="Previous testimonial"
+                    className="w-10 h-10 rounded-full border border-charcoal/20 flex items-center justify-center text-charcoal/70 hover:text-charcoal hover:border-charcoal/50 transition-colors cursor-pointer"
                   >
                     <ChevronLeft className="w-5 h-5" />
                   </button>
@@ -307,16 +294,18 @@ export function Home() {
                       <button 
                         key={i}
                         onClick={() => setActiveTestimonial(i)}
-                        className={`transition-all duration-300 rounded-full cursor-pointer ${
-                          i === activeTestimonial ? "w-6 h-2 bg-primary" : "w-2 h-2 bg-neutral-300 hover:bg-neutral-400"
+                        aria-label={`Show testimonial ${i + 1}`}
+                        className={`transition-colors duration-300 rounded-full cursor-pointer w-2 h-2 ${
+                          i === activeTestimonial ? "bg-charcoal" : "bg-charcoal/20 hover:bg-charcoal/40"
                         }`}
                       />
                     ))}
                   </div>
 
-                  <button 
+                  <button
                     onClick={() => setActiveTestimonial((prev) => (prev + 1) % testimonials.length)}
-                    className="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-neutral-500 hover:text-primary hover:scale-110 transition-all border border-neutral-100 cursor-pointer"
+                    aria-label="Next testimonial"
+                    className="w-10 h-10 rounded-full border border-charcoal/20 flex items-center justify-center text-charcoal/70 hover:text-charcoal hover:border-charcoal/50 transition-colors cursor-pointer"
                   >
                     <ChevronRight className="w-5 h-5" />
                   </button>
@@ -329,15 +318,17 @@ export function Home() {
       {/* ── NEWSLETTER ── */}
       <section className="relative w-full py-16 md:py-20 px-6 md:px-16 lg:px-24 bg-cream rounded-3xl md:rounded-[3rem] overflow-hidden border-2 border-white">
         <div className="max-w-xl relative z-20">
-          <h2 className="text-2xl md:text-3xl font-serif font-extrabold mb-3 text-charcoal">Stay Close to Ideas That Matter</h2>
-          <p className="text-neutral-600 font-semibold mb-8 text-sm md:text-base">A thoughtful selection of ideas, questions, and reflections from the SvaBharat movement.</p>
+          <h2 className="text-3xl md:text-4xl font-serif font-bold mb-3 text-charcoal">Stay close to ideas that matter</h2>
+          <p className="text-neutral-700 mb-8 text-base">A thoughtful selection of ideas, questions, and reflections from the SvaBharat movement.</p>
           <form className="flex flex-col sm:flex-row gap-3" onSubmit={(e) => e.preventDefault()}>
             <input
               type="email"
-              placeholder="Enter your email address"
-              className="flex-1 px-4 py-3 rounded-xl border-2 border-white bg-white focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-sm font-semibold transition-all"
+              placeholder="you@example.com"
+              aria-label="Email address"
+              required
+              className="flex-1 px-5 py-3 rounded-full border border-charcoal/15 bg-white focus:outline-none focus:ring-2 focus:ring-charcoal/30 text-sm transition-shadow"
             />
-            <button className="px-6 py-3 rounded-xl bg-primary text-white text-sm font-bold hover:bg-secondary transition-colors whitespace-nowrap cursor-pointer active:scale-95 shadow-sm">
+            <button className="px-6 py-3 rounded-full bg-charcoal text-cream-light text-sm font-semibold hover:bg-primary transition-colors whitespace-nowrap cursor-pointer">
               Subscribe
             </button>
           </form>
@@ -348,7 +339,7 @@ export function Home() {
           <img 
             src="/img1.png?v=3" 
             alt="Indic Wisdom and Traditions" 
-            className="w-full h-auto object-contain object-bottom mix-blend-multiply opacity-90 hover:opacity-100 transition-opacity duration-500 transform translate-y-12 md:translate-y-20 lg:translate-y-24 xl:translate-y-28 -translate-x-2 md:-translate-x-6 lg:-translate-x-10"
+            className="w-full h-auto object-contain object-bottom mix-blend-multiply opacity-25 lg:opacity-90 hover:opacity-100 transition-opacity duration-500 transform translate-y-12 md:translate-y-20 lg:translate-y-24 xl:translate-y-28 -translate-x-2 md:-translate-x-6 lg:-translate-x-10"
             style={{
               WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 25%)',
               maskImage: 'linear-gradient(to right, transparent 0%, black 25%)'

@@ -25,8 +25,8 @@ const filteredIdeas = ideas.filter((idea) =>
         </div>
 
         <div className="relative z-10 w-full md:w-[65%] mt-8 lg:mt-16">
-          <h1 className="text-5xl md:text-7xl font-serif font-extrabold tracking-tight mb-6 text-charcoal">Ideas in Motion</h1>
-          <p className="text-xl md:text-2xl text-neutral-600 max-w-3xl font-serif font-bold">
+          <h1 className="text-5xl md:text-7xl font-serif font-bold tracking-tight leading-[1.05] mb-6 text-charcoal">Ideas in motion</h1>
+          <p className="text-lg md:text-xl text-neutral-700 max-w-2xl leading-relaxed">
             Explorations, propositions, and fundamental questions we are currently working on.
           </p>
         </div>
@@ -55,22 +55,22 @@ const filteredIdeas = ideas.filter((idea) =>
         <div className="mt-16 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredIdeas.map((title, i) => (
             <div key={i} className="bg-white rounded-2xl p-8 shadow-md border-2 border-white flex flex-col h-full group hover:shadow-lg transition-all duration-300 cursor-pointer">
-              <div className="text-secondary font-mono font-bold text-xs uppercase tracking-wider mb-4">Idea {String(i + 1).padStart(2, '0')}</div>
+              <div className="font-serif italic text-secondary text-lg mb-3">Idea {i + 1}</div>
               <h3 className="text-2xl font-serif font-bold mb-4 text-charcoal group-hover:text-primary transition-colors">{title}</h3>
-              <p className="text-neutral-600 mb-8 flex-grow font-semibold text-sm leading-relaxed">
+              <p className="text-neutral-700 mb-8 flex-grow text-[0.95rem] leading-relaxed">
                 A bold proposition or fundamental question exploring the structural assumptions behind {title.toLowerCase()}.
               </p>
               
-              <div className="space-y-3 mt-auto border-t border-white/40 pt-6">
-                <a href="#" className="flex items-center justify-between text-xs font-bold text-neutral-650 hover:text-primary transition-colors uppercase tracking-wider">
+              <div className="space-y-3 mt-auto border-t border-neutral-200 pt-5">
+                <a href="#" className="flex items-center justify-between text-sm font-semibold text-neutral-700 hover:text-primary transition-colors">
                   <span>Notion Note</span>
                   <span>↗</span>
                 </a>
-                <a href="#" className="flex items-center justify-between text-xs font-bold text-neutral-650 hover:text-primary transition-colors uppercase tracking-wider">
+                <a href="#" className="flex items-center justify-between text-sm font-semibold text-neutral-700 hover:text-primary transition-colors">
                   <span>Idea Brief</span>
                   <span>↗</span>
                 </a>
-                <a href="#" className="flex items-center justify-between text-xs font-bold text-neutral-650 hover:text-primary transition-colors uppercase tracking-wider">
+                <a href="#" className="flex items-center justify-between text-sm font-semibold text-neutral-700 hover:text-primary transition-colors">
                   <span>Conversations</span>
                   <span>↗</span>
                 </a>

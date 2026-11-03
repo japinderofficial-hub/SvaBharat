@@ -26,10 +26,10 @@ export function Blogs() {
   return (
     <div className="flex flex-col w-full gap-4 md:gap-8 lg:gap-10">
       {/* Page Header */}
-      <section className="relative w-full pt-32 pb-16 px-6 md:px-12 lg:px-24 bg-cream rounded-3xl md:rounded-[3rem] overflow-hidden border-2 border-white">
+      <section className="relative w-full pt-36 md:pt-44 pb-16 px-6 md:px-12 lg:px-24 bg-cream rounded-3xl md:rounded-[3rem] overflow-hidden border-2 border-white">
         <Navbar />
-        <h1 className="text-5xl md:text-7xl font-serif font-extrabold tracking-tight mb-6 text-charcoal">Thinking in Public</h1>
-        <p className="text-xl md:text-2xl text-neutral-600 max-w-3xl font-serif font-bold">
+        <h1 className="text-5xl md:text-7xl font-serif font-bold tracking-tight leading-[1.05] mb-6 text-charcoal">Thinking in public</h1>
+        <p className="text-lg md:text-xl text-neutral-700 max-w-2xl leading-relaxed">
           Essays, reflections, questions, field observations, and emerging perspectives.
         </p>
       </section>
@@ -96,13 +96,13 @@ export function Blogs() {
                     {blog.title}
                   </h3>
                   
-                  <p className="text-neutral-600 text-sm md:text-base font-semibold leading-relaxed mb-8 line-clamp-2">
+                  <p className="text-neutral-700 text-base leading-relaxed mb-8 line-clamp-2">
                     {blog.excerpt}
                   </p>
                   
                   <div className="mt-auto">
-                    <span className="inline-flex items-center gap-2 font-bold text-primary group-hover:text-secondary group-hover:gap-3.5 transition-all uppercase tracking-wider text-xs">
-                      Read More <span aria-hidden="true">→</span>
+                    <span className="inline-flex items-center text-sm font-semibold text-charcoal underline decoration-charcoal/30 underline-offset-[6px] group-hover:decoration-charcoal transition-colors">
+                      Read the essay
                     </span>
                   </div>
                 </div>

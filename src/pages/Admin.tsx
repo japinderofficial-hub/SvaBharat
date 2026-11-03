@@ -490,7 +490,7 @@ export function Admin() {
           </form>
           
           <div className="mt-8 pt-6 border-t border-white/40 flex flex-col gap-3">
-            <Link to="/" className="text-xs font-bold text-neutral-450 hover:text-primary transition-colors block uppercase tracking-wider">
+            <Link to="/" className="text-xs font-bold text-neutral-400 hover:text-primary transition-colors block uppercase tracking-wider">
               Return to site
             </Link>
           </div>
@@ -546,7 +546,7 @@ export function Admin() {
           className={`flex-1 sm:flex-initial flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
             activeTab === "blogs" 
               ? "bg-white text-primary shadow-md border border-white/20" 
-              : "text-neutral-550 hover:text-primary"
+              : "text-neutral-600 hover:text-primary"
           }`}
         >
           <FileText className="w-4 h-4" />
@@ -557,7 +557,7 @@ export function Admin() {
           className={`flex-1 sm:flex-initial flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
             activeTab === "testimonials" 
               ? "bg-white text-primary shadow-md border border-white/20" 
-              : "text-neutral-550 hover:text-primary"
+              : "text-neutral-600 hover:text-primary"
           }`}
         >
           <MessageSquare className="w-4 h-4" />
@@ -568,7 +568,7 @@ export function Admin() {
           className={`flex-1 sm:flex-initial flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
             activeTab === "settings" 
               ? "bg-white text-primary shadow-md border border-white/20" 
-              : "text-neutral-550 hover:text-primary"
+              : "text-neutral-600 hover:text-primary"
           }`}
         >
           <Settings className="w-4 h-4" />
@@ -975,7 +975,7 @@ export function Admin() {
                           <td className="py-4 px-6">
                             <div>
                               <p className="text-neutral-800 font-semibold">{blog.authorName}</p>
-                              <p className="text-xs text-neutral-450 font-semibold">{blog.authorDesignation}</p>
+                              <p className="text-xs text-neutral-400 font-semibold">{blog.authorDesignation}</p>
                             </div>
                           </td>
                           <td className="py-4 px-6">
@@ -1152,7 +1152,7 @@ export function Admin() {
                           <td className="py-4 px-6 whitespace-nowrap">
                             <div>
                               <p className="font-bold text-neutral-900">{test.name}</p>
-                              <p className="text-xs text-neutral-450 font-semibold">{test.role}</p>
+                              <p className="text-xs text-neutral-400 font-semibold">{test.role}</p>
                             </div>
                           </td>
                           <td className="py-4 px-6">

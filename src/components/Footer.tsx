@@ -32,8 +32,8 @@ export function Footer() {
 
         {/* Explore Links */}
         <div>
-          <h4 className="font-serif font-extrabold text-lg mb-6 text-primary">Explore</h4>
-          <ul className="space-y-3 text-neutral-600 font-semibold text-sm">
+          <h4 className="font-serif font-bold text-lg mb-6 text-primary">Explore</h4>
+          <ul className="space-y-3 text-neutral-700 text-sm">
             <li><Link to="/" className="hover:text-secondary transition-colors">Home</Link></li>
             <li><Link to="/about" className="hover:text-secondary transition-colors">About</Link></li>
             <li><Link to="/ideas" className="hover:text-secondary transition-colors">Ideas</Link></li>
@@ -44,16 +44,16 @@ export function Footer() {
 
         {/* Participate & Connect Links */}
         <div>
-          <h4 className="font-serif font-extrabold text-lg mb-6 text-primary">Participate</h4>
-          <ul className="space-y-3 text-neutral-600 font-semibold text-sm mb-8">
+          <h4 className="font-serif font-bold text-lg mb-6 text-primary">Participate</h4>
+          <ul className="space-y-3 text-neutral-700 text-sm mb-8">
             <li><a href="#" className="hover:text-secondary transition-colors">Join the Movement</a></li>
             <li><Link to="/ideas" className="hover:text-secondary transition-colors">Contribute an Idea</Link></li>
             <li><Link to="/contact" className="hover:text-secondary transition-colors">Become a Contributor</Link></li>
             <li><a href="#" className="hover:text-secondary transition-colors">Subscribe</a></li>
           </ul>
           
-          <h4 className="font-serif font-extrabold text-lg mb-4 text-primary">Connect</h4>
-          <ul className="space-y-3 text-neutral-600 font-semibold text-sm">
+          <h4 className="font-serif font-bold text-lg mb-4 text-primary">Connect</h4>
+          <ul className="space-y-3 text-neutral-700 text-sm">
             <li><a href="mailto:hello@svabharat.in" className="hover:text-secondary transition-colors">Email</a></li>
             <li><a href="#" className="hover:text-secondary transition-colors">LinkedIn</a></li>
             <li><a href="#" className="hover:text-secondary transition-colors">Twitter / X</a></li>
@@ -62,7 +62,7 @@ export function Footer() {
 
         {/* Newsletter */}
         <div className="lg:col-span-1">
-          <h4 className="font-serif font-extrabold text-lg mb-4 text-primary">Ideas worth thinking about.</h4>
+          <h4 className="font-serif font-bold text-lg mb-4 text-primary">Ideas worth thinking about.</h4>
           <p className="text-neutral-600 mb-6 text-sm font-semibold leading-relaxed">
             Receive new ideas, conversations, and reflections from the SvaBharat movement.
           </p>
@@ -70,9 +70,11 @@ export function Footer() {
             <input 
               type="email" 
               placeholder="Enter your email address" 
-              className="w-full px-4 py-3 rounded-xl border-2 border-white bg-white focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-sm font-semibold transition-all"
+              aria-label="Email address"
+              required
+              className="w-full px-5 py-3 rounded-full border border-charcoal/15 bg-white focus:outline-none focus:ring-2 focus:ring-charcoal/30 text-sm transition-shadow"
             />
-            <button className="w-full px-4 py-3 rounded-xl bg-primary text-white font-bold hover:bg-secondary transition-colors shadow-sm cursor-pointer active:scale-95">
+            <button className="w-full px-4 py-3 rounded-full bg-charcoal text-cream-light text-sm font-semibold hover:bg-primary transition-colors cursor-pointer">
               Subscribe
             </button>
           </form>
@@ -80,7 +82,7 @@ export function Footer() {
       </div>
 
       <div className="relative z-20 max-w-7xl mx-auto mt-16 pt-8 border-t border-white/40 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-neutral-500 font-semibold">
-        <p className="text-black font-bold">© {new Date().getFullYear()} SvaBharat. All rights reserved.</p>
+        <p className="text-charcoal font-semibold bg-cream-light/90 rounded-full px-4 py-1.5">© {new Date().getFullYear()} SvaBharat. All rights reserved.</p>
         <Link 
           to="/admin" 
           className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white hover:bg-neutral-50 border-2 border-white text-xs font-bold text-neutral-500 hover:text-primary transition-all shadow-sm cursor-pointer"

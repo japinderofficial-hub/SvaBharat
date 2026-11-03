@@ -1,10 +1,10 @@
 import { useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import gsap from "gsap";
-import { BackgroundPaths } from "./ui/background-paths";
 
 export function Hero({ showAnimation }: { showAnimation: boolean }) {
   const titleRef = useRef<HTMLHeadingElement>(null);
-  const bottomRef = useRef<HTMLDivElement>(null);
+  const restRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!showAnimation) return;
@@ -12,29 +12,22 @@ export function Hero({ showAnimation }: { showAnimation: boolean }) {
       const tl = gsap.timeline({ delay: 0.1 });
       tl.fromTo(
         titleRef.current,
-        { opacity: 0, y: 30 },
+        { opacity: 0, y: 24 },
         { opacity: 1, y: 0, duration: 0.9, ease: "power3.out" }
       );
       tl.fromTo(
-        bottomRef.current?.children || [],
-        { opacity: 0, y: 12 },
-        { opacity: 1, y: 0, duration: 0.6, stagger: 0.15, ease: "power2.out" },
-        "-=0.4"
+        restRef.current?.children || [],
+        { opacity: 0, y: 10 },
+        { opacity: 1, y: 0, duration: 0.6, stagger: 0.12, ease: "power2.out" },
+        "-=0.45"
       );
-      gsap.to(".chakra-svg", {
-        rotation: 360,
-        duration: 80,
-        repeat: -1,
-        ease: "none",
-      });
     });
     return () => ctx.revert();
   }, [showAnimation]);
 
   return (
     <section className="relative w-full h-full min-h-[calc(100dvh-2rem)] md:min-h-[calc(100dvh-4rem)] lg:min-h-[calc(100dvh-5rem)] flex flex-col overflow-hidden text-charcoal">
-
-      {/* Full-bleed background photo */}
+      {/* Full-bleed illustration */}
       <div className="absolute inset-0 z-0 pointer-events-none select-none">
         <img
           src="/svabharat_newww.png"
@@ -43,77 +36,39 @@ export function Hero({ showAnimation }: { showAnimation: boolean }) {
         />
       </div>
 
-      {/* Subtle background paths */}
-      <BackgroundPaths />
-
-      {/* Very subtle chakra watermark */}
-      <div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 pointer-events-none opacity-[0.018]"
-        style={{
-          WebkitMaskImage: "radial-gradient(circle, black 30%, transparent 70%)",
-          maskImage: "radial-gradient(circle, black 30%, transparent 70%)",
-        }}
-      >
-        <svg viewBox="0 0 200 200" className="w-[500px] h-[500px] md:w-[700px] md:h-[700px] chakra-svg">
-          <circle cx="100" cy="100" r="96" fill="none" stroke="#F97316" strokeWidth="1.5" />
-          <circle cx="100" cy="100" r="90" fill="none" stroke="#F97316" strokeWidth="1" />
-          <circle cx="100" cy="100" r="16" fill="none" stroke="#F97316" strokeWidth="1.5" />
-          <circle cx="100" cy="100" r="8" fill="#F97316" />
-          {Array.from({ length: 24 }).map((_, i) => (
-            <g key={i} transform={`rotate(${i * 15} 100 100)`}>
-              <line x1="100" y1="84" x2="100" y2="16" stroke="#F97316" strokeWidth="1" />
-              <circle cx="100" cy="10" r="1.5" fill="#F97316" />
-            </g>
-          ))}
-        </svg>
-      </div>
-
-      {/* Main Content — centered */}
-      <div className="relative z-10 flex-1 flex items-center justify-center px-6 md:px-16 lg:px-24">
+      {/* Main content — title, line, actions, all centred in the open sky of the illustration */}
+      <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-6 md:px-16 lg:px-24 pt-28 pb-40 md:pb-56 text-center">
         <h1
           ref={titleRef}
-          className="text-center max-w-4xl select-none flex flex-col gap-1 font-serif font-bold tracking-tight text-[clamp(2rem,5vw,4.2rem)] leading-[1.15]"
+          className="max-w-4xl font-serif font-bold tracking-tight text-[clamp(2.25rem,5.2vw,4.4rem)] leading-[1.08] text-[#1C1917]"
           style={{ opacity: 0 }}
         >
-          {/* "Sva-Bharat" — deep saffron, stands out on warm bg */}
-          <span className="block">
-            <span className="cursor-target-expand inline-block text-[#B45309] drop-shadow-sm">Sva-Bharat</span>
-          </span>
-          {/* Remaining lines — deep charcoal, crisp on the warm background */}
-          <span className="block text-[#1C1917] drop-shadow-sm">
-            <span className="cursor-target-expand inline-block">Reimagining Bharat</span>
-          </span>
-          <span className="block text-[#1C1917] drop-shadow-sm">
-            <span className="cursor-target-expand inline-block">From First Principles.</span>
-          </span>
+          <span className="block text-[#9A4A0B]">Sva-Bharat</span>
+          <span className="block">Reimagining Bharat</span>
+          <span className="block italic font-medium">from first principles.</span>
         </h1>
-      </div>
 
-      {/* Bottom Row — subtitle left, CTA right (Centered on mobile) */}
-      <div
-        ref={bottomRef}
-        className="relative z-10 flex flex-col sm:flex-row items-center sm:items-end justify-between gap-6 px-6 md:px-16 lg:px-24 pb-8 md:pb-12 text-center sm:text-left"
-      >
-        <p className="max-w-sm text-sm md:text-base text-[#FAF5EB] font-semibold leading-relaxed" style={{ opacity: 0 }}>
-          A Movement to Inspire Jan to Shape the Bharat They Aspire For.
-        </p>
+        <div ref={restRef} className="mt-6 md:mt-8 flex flex-col items-center gap-7">
+          <p className="max-w-md text-base md:text-lg text-[#3F3A36] leading-relaxed" style={{ opacity: 0 }}>
+            A movement to inspire <em className="font-serif">Jan</em> to shape the Bharat they aspire for.
+          </p>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 w-full sm:w-auto" style={{ opacity: 0 }}>
-          <a
-            href="/ideas"
-            className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#B45309] text-white text-sm font-bold hover:bg-[#92400E] transition-colors w-full sm:w-auto shadow-md cursor-pointer active:scale-95"
-          >
-            Explore the Ideas
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-          <a
-            href="https://tally.so/r/jaRrya"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl border-2 border-[#1C1917]/40 bg-white/30 backdrop-blur-sm text-[#1C1917] text-sm font-bold hover:bg-white/50 transition-colors w-full sm:w-auto shadow-md cursor-pointer active:scale-95"
-          >
-            Join the Movement
-          </a>
+          <div className="flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto" style={{ opacity: 0 }}>
+            <Link
+              to="/ideas"
+              className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-[#1C1917] text-[#FAF5EB] text-sm font-semibold hover:bg-[#9A4A0B] transition-colors w-full sm:w-auto"
+            >
+              Explore the ideas
+            </Link>
+            <a
+              href="https://tally.so/r/jaRrya"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center px-6 py-3 rounded-full text-[#1C1917] text-sm font-semibold underline decoration-[#1C1917]/30 underline-offset-[6px] hover:decoration-[#1C1917] transition-colors w-full sm:w-auto"
+            >
+              Join the movement
+            </a>
+          </div>
         </div>
       </div>
     </section>
